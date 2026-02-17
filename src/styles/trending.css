@@ -1,0 +1,46 @@
+/* Trending specific styles if needed separately, otherwise included in footer.css or similar */
+/* Moving marquee styles into footer.css to avoid too many files, but wait, I should respect separation. I'll put it in trending.css */
+.trending-section {
+    padding: 4rem 0;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 2rem 0;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.marquee-content span {
+    font-family: var(--font-display);
+    font-size: 5vw;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+}
+
+.promo-banner {
+    text-align: center;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+.promo-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.promo-text p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}

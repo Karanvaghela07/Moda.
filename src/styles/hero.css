@@ -1,0 +1,127 @@
+/* Hero Styles */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 100px;
+    /* Clear navbar */
+    left: 2rem;
+    right: 2rem;
+    width: calc(100% - 4rem);
+    height: calc(100% - 140px);
+    /* Leave space at bottom too */
+    z-index: 0;
+    will-change: transform;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    /* Sexy rounded corners */
+    overflow: hidden;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Darken image slightly */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    /* Reduced gap to bring button closer */
+    padding-top: 180px;
+    /* Balance spacing */
+}
+
+.hero-text-wrapper {
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+.hero-subtext-wrapper {
+    overflow: hidden;
+    max-width: 600px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: black;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: var(--accent-color);
+    color: white;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 40px;
+    background: white;
+}

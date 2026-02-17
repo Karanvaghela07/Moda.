@@ -1,0 +1,28 @@
+/* Global Variables */
+:root {
+  /* Colors - Rich, Premium, Minimalist */
+  --bg-color: #0f0f0f;
+  --text-main: #ffffff;
+  --text-muted: #a1a1a1;
+  --accent-color: #eb5e28; /* A subtle pop, can be changed */
+  --border-color: rgba(255, 255, 255, 0.1);
+  
+  /* Typography */
+  --font-display: 'Playfair Display', serif; /* Elegant headings */
+  --font-body: 'Inter', sans-serif; /* Clean body text */
+  
+  /* Layout */
+  --container-width: 1400px;
+  --header-height: 80px;
+  
+  /* Animation */
+  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Mode Support (if needed later) */
+[data-theme='light'] {
+  --bg-color: #ffffff;
+  --text-main: #0f0f0f;
+  --text-muted: #555555;
+  --border-color: rgba(0, 0, 0, 0.1);
+}

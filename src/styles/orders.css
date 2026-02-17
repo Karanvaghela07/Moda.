@@ -1,0 +1,429 @@
+/* Order Pages Styles */
+.orders-page {
+    padding-top: 150px;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.orders-container {
+    max-width: 1200px;
+    /* Wider container */
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+}
+
+.orders-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: #161616;
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.stat-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+}
+
+.stat-card p {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* Order Details Grid Layout */
+.order-details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* 2/3 main, 1/3 sidebar */
+    gap: 2rem;
+}
+
+.glass-card {
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-card {
+    margin-bottom: 2rem;
+}
+
+.info-card h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-outline-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    justify-content: center;
+}
+
+.btn-outline-icon:hover {
+    background: white;
+    color: black;
+}
+
+/* Existing Order Card Reuse */
+/* Order Card Styles */
+.order-card {
+    background: #0f0f0f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.order-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.order-header {
+    background: #141414;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.order-header>div {
+    min-width: 120px;
+}
+
+.order-header>div:last-child {
+    margin-left: auto;
+    min-width: auto;
+}
+
+.order-label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.order-value {
+    color: white;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+}
+
+.order-items-scroll {
+    padding: 1.5rem 2rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.order-items-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.order-items-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.order-item-preview {
+    flex: 0 0 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.order-item-preview img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Order Details Specific */
+.order-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.item-detail-row {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.item-detail-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-detail-img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Recommendations */
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.rec-card {
+    cursor: pointer;
+}
+
+.rec-img {
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.rec-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rec-card:hover .rec-img img {
+    transform: scale(1.05);
+}
+
+.rec-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+.rec-info p {
+    color: var(--text-muted);
+}
+
+/* Progress Bar Updates */
+.progress-track {
+    position: relative;
+    margin: 4rem 0 2rem;
+}
+
+.progress-line-bg {
+    position: absolute;
+    top: 25px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: #333;
+    z-index: 0;
+}
+
+.progress-line-fill {
+    position: absolute;
+    top: 25px;
+    left: 1rem;
+    height: 2px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    z-index: 0;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 80px;
+}
+
+.step-icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    transition: all 0.5s ease;
+}
+
+.step-item.active .step-icon-box {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.step-item.completed .step-icon-box {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .orders-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .orders-container {
+        padding: 0 1rem 4rem;
+    }
+
+    /* Order History Styles */
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .order-header>div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 0.5rem;
+    }
+
+    .order-header>div:last-child {
+        margin-left: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    .order-header>div:last-child a.btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .order-label {
+        margin-bottom: 0;
+    }
+
+    /* Order Details Page Responsive */
+    .order-details-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .order-details-header .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .progress-track {
+        margin: 3rem 0;
+    }
+
+    .progress-steps {
+        font-size: 0.8rem;
+    }
+
+    .step-item {
+        width: 60px;
+        gap: 0.8rem;
+    }
+
+    .step-icon-box {
+        width: 40px;
+        height: 40px;
+    }
+
+    .step-icon-box svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .item-detail-row {
+        flex-direction: row;
+        /* Keep row but adjust sizes */
+    }
+
+    .item-detail-row h4 {
+        font-size: 1.1rem !important;
+    }
+
+    .details-main .glass-card {
+        padding: 1.5rem;
+    }
+}

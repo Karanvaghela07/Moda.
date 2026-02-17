@@ -1,0 +1,4 @@
+/* Lookbook-specific if separated, but mostly in product-detail.css above. 
+   Creating this file to satisfy import in Lookbook.jsx */
+@import './product-detail.css';
+/* Importing shared for simplicity or just empty if styles are global/merged */

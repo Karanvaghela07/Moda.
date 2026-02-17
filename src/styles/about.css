@@ -1,0 +1,370 @@
+/* About Page Styles */
+.about-page {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+.about-hero {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.about-hero-content {
+    padding: 0 4rem;
+    padding-top: 100px;
+}
+
+.about-hero-content h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+}
+
+.about-hero-img {
+    height: 100%;
+    overflow: hidden;
+}
+
+.about-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-manifesto {
+    padding: 10rem 0;
+    text-align: center;
+}
+
+.manifesto-text {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.4;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ddd;
+}
+
+.about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.split-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.split-text {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-text h2 {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.split-text p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 400px;
+}
+
+.stats {
+    display: flex;
+    gap: 4rem;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats span {
+    font-size: 3rem;
+    font-family: var(--font-display);
+    line-height: 1;
+}
+
+.stats small {
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.about-commitment {
+    padding: 10rem 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.about-commitment h2 {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    margin-bottom: 6rem;
+    text-transform: uppercase;
+}
+
+.commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 4rem;
+}
+
+.commitment-item h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.commitment-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.commitment-item p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.about-philosophy {
+    height: 60vh;
+    background-image: url('https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?q=80&w=2070&auto=format&fit=crop');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.about-philosophy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.philosophy-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 2rem;
+    color: #fff;
+    max-width: 800px;
+}
+
+.philosophy-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.philosophy-content p {
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.about-materiality {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    background-color: var(--bg-color);
+}
+
+.material-text {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.material-text h2 {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.material-text p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.material-list {
+    list-style: none;
+    padding: 0;
+}
+
+.material-list li {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    color: var(--text-main);
+}
+
+.material-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-join {
+    padding: 10rem 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.about-join h2 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 6rem);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.about-join p {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.join-btn {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.join-btn:hover {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+@media (max-width: 900px) {
+    .about-materiality {
+        grid-template-columns: 1fr;
+    }
+
+    .material-img {
+        height: 50vh;
+        order: -1;
+    }
+
+    .material-text {
+        padding: 4rem 2rem;
+    }
+
+    .about-join {
+        padding: 6rem 2rem;
+    }
+
+    .about-hero,
+    .about-split {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .about-hero-img {
+        height: 50vh;
+        order: -1;
+    }
+
+    .about-hero-content {
+        padding: 4rem 2rem;
+    }
+
+    .split-text {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .manifesto-text {
+        font-size: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .about-manifesto,
+    .about-commitment {
+        padding: 6rem 0;
+    }
+
+    .split-text h2,
+    .about-commitment h2,
+    .material-text h2 {
+        font-size: 3rem;
+    }
+
+    .stats {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .stats span {
+        font-size: 2.5rem;
+    }
+
+    .commitment-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-top: 3rem;
+    }
+
+    .about-philosophy {
+        height: 50vh;
+    }
+
+    .philosophy-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-join h2 {
+        font-size: 3rem;
+    }
+}

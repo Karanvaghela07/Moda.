@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 { fill: #000; }
+      .cls-2 { fill: #fff; font-family: 'Didot', 'Bodoni MT', 'Times New Roman', serif; font-weight: bold; }
+    </style>
+  </defs>
+  <rect class="cls-1" width="512" height="512" rx="0" ry="0"/>
+  <text x="50%" y="50%" class="cls-2" font-size="340" text-anchor="middle" dy=".35em">M.</text>
+</svg>

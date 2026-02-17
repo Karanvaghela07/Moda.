@@ -1,0 +1,173 @@
+/* Brand Manifesto Marquee */
+.brand-marquee {
+    background: var(--bg-color);
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 2rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    padding-left: 100%;
+    /* Start off-screen */
+}
+
+.marquee-item {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-right: 4rem;
+    color: var(--text-muted);
+    /* Or transparent with stroke */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Editorial Grid */
+.editorial-section {
+    padding: 6rem 0;
+    background: var(--bg-color);
+}
+
+.editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    height: 80vh;
+    /* Adjust height */
+}
+
+.editorial-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.editorial-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.editorial-item:hover img {
+    transform: scale(1.05);
+}
+
+.editorial-item.large {
+    grid-column: span 8;
+    grid-row: span 2;
+}
+
+.editorial-item.small {
+    grid-column: span 4;
+}
+
+.editorial-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.editorial-item:hover .editorial-overlay {
+    transform: translateY(0);
+}
+
+/* Video / Parallax Section */
+.video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.6);
+}
+
+.video-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.video-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+/* Instagram / Community Feed */
+.insta-feed {
+    padding: 6rem 0;
+    background: #0f0f0f;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0;
+    /* Tight grid */
+}
+
+.insta-item {
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.insta-item:hover img {
+    opacity: 0.8;
+}
+
+.insta-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.insta-item:hover .insta-icon {
+    opacity: 1;
+}
