@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingBag, Search, Menu, X } from 'lucide-react';
+import { ShoppingBag, Search, Menu, X, Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
+import { useAuth } from '../context/AuthContext';
 import '../styles/navbar.css';
 
 const Navbar = () => {
@@ -11,7 +13,10 @@ const Navbar = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const { toggleCart, cartCount } = useCart();
+    const { wishlistItems } = useWishlist();
+    const { currentUser } = useAuth();
     const navigate = useNavigate();
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,11 +36,11 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'Shop', path: '/shop' },
-        { name: 'Collections', path: '/collections' },
-        { name: 'About', path: '/about' },
-        { name: 'Orders', path: '/order-history' },
+        { name: 'MEN', path: '/men' },
+        { name: 'WOMEN', path: '/women' },
+        { name: 'KIDS', path: '/kids' },
+        { name: 'DISCOVER', path: '/shop' },
+        { name: 'COLLECTIONS', path: '/collections' },
     ];
 
     return (
@@ -44,11 +49,11 @@ const Navbar = () => {
                 className={`navbar ${isScrolled ? 'scrolled' : ''}`}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+                transition={{ duration: 0.8 }}
             >
                 <div className="container nav-container">
-                    <Link to="/" className="logo">
-                        MODA.
+                    <Link to="/" className="logo-link">
+                        <img src="/logo.svg" alt="The Indie Store" className="nav-logo-img" style={{ height: '75px' }} />
                     </Link>
 
                     <div className="nav-links desktop-only">
@@ -65,6 +70,52 @@ const Navbar = () => {
                             size={24}
                             onClick={() => setIsSearchOpen(!isSearchOpen)}
                         />
+
+                        {/* Wishlist Icon */}
+                        <div className="wishlist-icon-wrapper" style={{ position: 'relative' }}>
+                            <Link to="/wishlist" className="icon">
+                                <Heart size={24} />
+                            </Link>
+                            {wishlistItems && wishlistItems.length > 0 && (
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '-5px',
+                                    right: '-5px',
+                                    background: 'var(--accent-red)',
+                                    width: '8px',
+                                    height: '8px',
+                                    borderRadius: '50%'
+                                }}></span>
+                            )}
+                        </div>
+
+                        {/* User Account Icon — goes to /account if logged in, /login if not */}
+                        <div className="user-icon-wrapper" style={{ position: 'relative' }}>
+                            <Link to={currentUser ? '/account' : '/login'} className="icon" title={currentUser ? `Hi, ${currentUser.name}` : 'Login'}>
+                                {currentUser ? (
+                                    <span style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: 28,
+                                        height: 28,
+                                        borderRadius: '50%',
+                                        background: '#e11b23',
+                                        color: '#fff',
+                                        fontSize: '0.75rem',
+                                        fontWeight: 800,
+                                        letterSpacing: 0,
+                                        lineHeight: 1,
+                                        fontFamily: 'Syncopate, sans-serif'
+                                    }}>
+                                        {currentUser.name.charAt(0).toUpperCase()}
+                                    </span>
+                                ) : (
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                )}
+                            </Link>
+                        </div>
+
                         <div className="cart-icon-wrapper" onClick={toggleCart}>
                             <ShoppingBag className="icon" size={24} />
                             {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
@@ -114,7 +165,7 @@ const Navbar = () => {
                         transition={{ type: 'tween', duration: 0.4 }}
                     >
                         <div className="mobile-menu-header">
-                            <span className="logo">MODA.</span>
+                            <img src="/logo.svg" alt="The Indie Store" style={{ height: '40px' }} />
                             <X
                                 className="icon close-icon"
                                 size={24}

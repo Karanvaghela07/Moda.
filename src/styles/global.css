@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 @import './variables.css';
+@import './wk-distinct.css';
 
 /* Reset & Base Styles */
 * {
@@ -80,9 +81,38 @@ video {
     padding: 0 2rem;
 }
 
+/* ─── Global navbar clearance ──────────────────────────────────────────────
+   The navbar is position:fixed at 68px tall. Every page automatically sits
+   below it because .main-content (in App.jsx) gets this offset.
+   Pages that previously had their own padding-top (e.g. checkout) still work
+   correctly because the per-page value is now 0 and the global one applies.
+─────────────────────────────────────────────────────────────────────────── */
+.main-content {
+    padding-top: 68px;
+}
+
 .text-gradient {
     background: linear-gradient(to right, #fff, #666);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* ─── Mobile Responsiveness ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+        /* Slightly scale down all em/rem values for mobile */
+    }
+
+    .container {
+        padding: 0 1.25rem;
+        /* Tighter padding on mobile edges */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
 }

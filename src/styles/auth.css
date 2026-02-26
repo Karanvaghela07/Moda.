@@ -1,0 +1,350 @@
+/* Premium Auth Styles - The Indie Store */
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+.auth-page {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+}
+
+/* --- Split Layout --- */
+.auth-image-side {
+    flex: 1.2;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    display: none;
+}
+
+.auth-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: transform 10s ease;
+    filter: grayscale(100%) contrast(1.2);
+}
+
+.auth-page:hover .auth-image-side img {
+    transform: scale(1.1);
+}
+
+.auth-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(225, 27, 35, 0.4) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.auth-quote h2 {
+    font-family: 'Syncopate', sans-serif;
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(225, 27, 35, 0.5);
+}
+
+.auth-quote p {
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* --- Form Side --- */
+.auth-form-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 4rem;
+    background: #fff;
+}
+
+.back-home {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.back-home:hover {
+    color: #e11b23;
+    padding-left: 0.5rem;
+}
+
+.auth-container {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.auth-header {
+    margin-bottom: 3rem;
+}
+
+.auth-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+}
+
+.auth-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* --- Floating Inputs --- */
+.auth-form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: #111;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background: transparent;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-radius: 0;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #e11b23;
+}
+
+.auth-label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 1rem;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.auth-input:focus~.auth-label,
+.auth-input:not(:placeholder-shown)~.auth-label {
+    top: -0.8rem;
+    font-size: 0.75rem;
+    color: #e11b23;
+    font-weight: 700;
+}
+
+/* --- Buttons --- */
+.auth-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: #e11b23;
+    color: #fff;
+    border: none;
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    margin-top: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.auth-btn:hover {
+    background: #000;
+    box-shadow: 5px 5px 0px rgba(225, 27, 35, 0.2);
+    transform: translate(-2px, -2px);
+}
+
+/* --- Checkbox & Links --- */
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.remember-me input {
+    accent-color: #e11b23;
+    width: 18px;
+    height: 18px;
+}
+
+.forgot-password {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #e11b23;
+}
+
+/* --- Social Login --- */
+.social-login {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.divider span {
+    padding: 0 1rem;
+}
+
+.social-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fff;
+    border-radius: 50%;
+    /* Circle */
+}
+
+.social-btn:hover {
+    border-color: #e11b23;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Footer --- */
+.auth-footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+}
+
+.auth-link {
+    color: #e11b23;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+}
+
+.auth-link:hover {
+    color: #000;
+}
+
+/* --- Responsive --- */
+@media (min-width: 900px) {
+    .auth-image-side {
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .auth-form-side {
+        padding: 2rem;
+    }
+
+    .auth-title {
+        font-size: 2rem;
+    }
+}
+
+/* ── Error Message ───────────────────────────────────────────────────────── */
+.auth-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff0f0;
+    border: 1px solid rgba(225, 27, 35, 0.3);
+    border-left: 4px solid #e11b23;
+    color: #c0392b;
+    padding: 0.85rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+}
+
+/* Disabled state while loading */
+.auth-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* "Log in instead" link inside error box */
+.auth-error-link {
+    color: #c0392b;
+    font-weight: 700;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.auth-error-link:hover {
+    color: #e11b23;
+}

@@ -1,0 +1,101 @@
+/* Horizontal Scrolling Section */
+.h-scroll-section {
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.h-scroll-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.h-scroll-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #111;
+    letter-spacing: -1px;
+}
+
+.h-scroll-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.h-scroll-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.h-scroll-btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* Scroll Track */
+.h-scroll-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    /* Space for box shadow or scale effects */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Momentum scrolling on iOS */
+}
+
+.h-scroll-track::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.h-scroll-item {
+    flex: 0 0 calc(25% - 1.2rem);
+    /* 4 items on desktop */
+    min-width: 280px;
+    scroll-snap-align: start;
+}
+
+@media (max-width: 1024px) {
+    .h-scroll-item {
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .h-scroll-item {
+        flex: 0 0 calc(50% - 1rem);
+        /* 2 items visible */
+        min-width: 220px;
+    }
+
+    .h-scroll-controls {
+        display: none;
+        /* Rely on swiping for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .h-scroll-item {
+        flex: 0 0 calc(80% - 1rem);
+        /* Almost 1 full item peeking */
+    }
+}

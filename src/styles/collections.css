@@ -1,343 +1,188 @@
-/* Collections Page Styles */
-.collections-page {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-body);
+/* Premium Split-Screen Collections Page */
+
+.split-collections-page {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Space Grotesk', sans-serif;
+    padding-top: 100px;
 }
 
-/* 1. Hero Section */
-.collections-hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.collections-intro {
     text-align: center;
-    overflow: hidden;
+    padding: 10vh 5vw 15vh;
 }
 
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
-}
-
-.hero-content {
-    position: relative;
-    z-index: 10;
-    color: white;
-}
-
-.hero-content h1 {
-    font-family: var(--font-display);
-    font-size: 8rem;
-    line-height: 0.8;
+.intro-badge {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
     margin-bottom: 2rem;
-    margin-top: 0;
     text-transform: uppercase;
 }
 
-.hollow-text {
-    color: transparent;
-    -webkit-text-stroke: 2px white;
+.collections-intro h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -3px;
+    text-transform: uppercase;
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+/* Split Section Layout */
+.split-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0 5vw 20vh;
+    gap: 8vw;
+    position: relative;
+    border-top: 1px solid #f0f0f0;
+    /* Ultra clean separation */
+}
+
+/* Left Side - Sticky Information */
+.split-left {
+    flex: 0 0 35%;
+    position: relative;
+}
+
+.sticky-content {
+    position: sticky;
+    top: 25vh;
+    /* Places it nicely below standard navbars */
+    padding-top: 4rem;
+}
+
+.split-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.8;
-}
-
-/* 2. Featured Drop */
-.featured-drop-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.drop-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6rem;
-    background: #050505;
-}
-
-.section-label {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    color: #888;
     display: block;
+    margin-bottom: 1.5rem;
 }
 
-.drop-content h2 {
-    font-family: var(--font-display);
-    font-size: 5rem;
-    line-height: 0.9;
-    margin-bottom: 2rem;
-    margin-top: 0;
+.split-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
 }
 
-.drop-content p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 400px;
-    margin-bottom: 3rem;
+.split-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
     line-height: 1.6;
+    color: #555;
+    margin-bottom: 3rem;
+    max-width: 90%;
 }
 
-.drop-image {
-    height: 100%;
-    overflow: hidden;
+.split-shop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.1rem 2.8rem;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.drop-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+.split-shop-btn:hover {
+    background: #333;
+    gap: 20px;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.featured-drop-section:hover .drop-image img {
-    transform: scale(1.05);
-}
-
-/* 3. The Grid */
-.collections-header-small {
-    padding: 6rem 0 3rem;
+/* Right Side - Scrolling Images */
+.split-right {
+    flex: 0 0 55%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    /* Subtle separator */
-    margin-bottom: 3rem;
+    gap: 15vh;
+    padding-top: 10vh;
 }
 
-.collections-header-small h2 {
-    font-family: var(--font-display);
-    font-size: 3rem;
-    text-transform: uppercase;
-    margin: 0 0 1.5rem;
-}
-
-.collection-filters {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.collection-filters span {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    cursor: pointer;
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.collection-filters span:hover,
-.collection-filters span.active {
-    color: var(--text-color);
-    border-color: var(--text-color);
-}
-
-
-.collections-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 300px;
-    /* Base row height */
-    gap: 1.5rem;
-    padding-bottom: 6rem;
-}
-
-/* Bento Grid Classes */
-.collection-card {
-    position: relative;
+.parallax-img-wrapper {
+    width: 100%;
+    height: 90vh;
+    /* Massive immersive images */
     overflow: hidden;
-    cursor: pointer;
-}
-
-.collection-card.large {
-    grid-column: span 8;
-    grid-row: span 2;
-}
-
-.collection-card.tall {
-    grid-column: span 4;
-    grid-row: span 2;
-}
-
-.collection-card.wide {
-    grid-column: span 8;
-    grid-row: span 1;
-}
-
-.collection-card.small {
-    grid-column: span 4;
-    grid-row: span 1;
-}
-
-.collection-card.medium {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-
-/* Mobile Responsive Grid */
-@media (max-width: 900px) {
-    .collections-grid {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .collection-card,
-    .collection-card.large,
-    .collection-card.tall,
-    .collection-card.wide,
-    .collection-card.small,
-    .collection-card.medium {
-        grid-column: span 12;
-        grid-row: auto;
-        height: 400px;
-    }
-
-    .hero-content h1 {
-        font-size: 4rem;
-    }
-
-    .featured-drop-section {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-    .drop-content {
-        padding: 4rem 2rem;
-        order: 2;
-    }
-
-    .drop-image {
-        height: 50vh;
-        order: 1;
-    }
-}
-
-.img-container {
-    width: 100%;
-    height: 100%;
     position: relative;
+    background: #f9f9f9;
 }
 
-.img-container img {
+.parallax-img {
     width: 100%;
-    height: 100%;
+    height: 130%;
+    /* Extra height to allow transform Y for parallax */
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+    will-change: transform;
 }
 
-.collection-hover-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+/* Responsive */
+@media (max-width: 1024px) {
+    .split-section {
+        gap: 4vw;
+    }
+
+    .parallax-img-wrapper {
+        height: 70vh;
+    }
 }
 
-.explore-btn {
-    border: 1px solid white;
-    color: white;
-    padding: 0.8rem 2rem;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
-    backdrop-filter: blur(5px);
-}
+@media (max-width: 768px) {
+    .split-section {
+        flex-direction: column;
+        border-top: none;
+        padding-bottom: 10vh;
+        padding-top: 5vh;
+    }
 
-.collection-card:hover .img-container img {
-    transform: scale(1.05);
-}
+    .split-left {
+        flex: 1;
+    }
 
-.collection-card:hover .collection-hover-overlay {
-    opacity: 1;
-}
+    .sticky-content {
+        position: relative;
+        top: 0;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        z-index: 10;
+        background: #fff;
+        /* Ensure it stays clean */
+    }
 
-.collection-card:hover .explore-btn {
-    transform: translateY(0);
-}
+    .split-right {
+        flex: 1;
+        gap: 5vh;
+        padding-top: 0;
+    }
 
-.collection-info {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    z-index: 5;
-    pointer-events: none;
-    /* Let clicks pass through */
-}
+    .parallax-img-wrapper {
+        height: 60vh;
+        border-radius: 12px;
+    }
 
-.collection-info h2 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    margin: 0 0 0.5rem;
-    text-transform: uppercase;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.collection-info p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-    transform: translateY(10px);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
-}
-
-.collection-card:hover .collection-info p {
-    transform: translateY(0);
-    opacity: 1;
+    .collections-intro {
+        padding: 5vh 5vw 10vh;
+    }
 }

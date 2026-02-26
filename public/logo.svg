@@ -1,0 +1,50 @@
+<svg width="260" height="120" viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Titan+One&amp;display=swap');
+            .text-style {
+                font-family: 'Titan One', cursive;
+                fill: white;
+                stroke: #e11b23;
+                stroke-width: 6px;
+                paint-order: stroke;
+                stroke-linejoin: round;
+                stroke-linecap: round;
+            }
+        </style>
+    </defs>
+    
+    <!-- Ghost Body -->
+    <!-- Moved down by 10px to center it (was M40 15, now M40 25) -->
+    <path d="M40 25 
+             C 40 5, 80 5, 80 25 
+             V 95 
+             C 80 102, 72 102, 68 95 
+             C 64 88, 56 88, 52 95 
+             C 48 102, 40 102, 40 95 
+             V 25 Z" 
+          fill="white" 
+          stroke="#e11b23" 
+          stroke-width="6"
+          stroke-linejoin="round"/>
+          
+    <!-- Eyes (Red Ovals) -->
+    <!-- Moved down by 10px (was cy=40, now cy=50) -->
+    <ellipse cx="52" cy="50" rx="6" ry="8" fill="#e11b23"/>
+    <ellipse cx="68" cy="50" rx="6" ry="8" fill="#e11b23"/>
+
+    <!-- Text Group -->
+    <g transform="translate(95, 30)">
+        <!-- "The" (Small) -->
+        <text x="0" y="0" class="text-style" font-size="24" transform="rotate(-5)">The</text>
+        
+        <!-- "Indie" (Large) -->
+        <text x="-5" y="40" class="text-style" font-size="42">Indie</text>
+        
+        <!-- "Store" (Medium) -->
+        <text x="10" y="75" class="text-style" font-size="32" transform="rotate(-2)">Store</text>
+        
+        <!-- Swoosh -->
+        <path d="M10 85 Q 60 95, 110 80" stroke="#e11b23" stroke-width="6" stroke-linecap="round" fill="none" />
+    </g>
+</svg>

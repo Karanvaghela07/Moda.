@@ -1,28 +1,30 @@
-/* Global Variables */
+/* Global Variables - Souled Store Theme */
 :root {
-  /* Colors - Rich, Premium, Minimalist */
-  --bg-color: #0f0f0f;
-  --text-main: #ffffff;
-  --text-muted: #a1a1a1;
-  --accent-color: #eb5e28; /* A subtle pop, can be changed */
-  --border-color: rgba(255, 255, 255, 0.1);
-  
-  /* Typography */
-  --font-display: 'Playfair Display', serif; /* Elegant headings */
-  --font-body: 'Inter', sans-serif; /* Clean body text */
-  
-  /* Layout */
-  --container-width: 1400px;
-  --header-height: 80px;
-  
-  /* Animation */
-  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Light Mode Support (if needed later) */
-[data-theme='light'] {
+  /* Colors - Fun, Bold, Pop Culture Friendly */
   --bg-color: #ffffff;
-  --text-main: #0f0f0f;
-  --text-muted: #555555;
-  --border-color: rgba(0, 0, 0, 0.1);
+  --text-main: #282c3f;
+  /* Soft Black */
+  --text-muted: #535766;
+  --accent-color: #e11b23;
+  /* Souled Store Red */
+  --secondary-accent: #117a7a;
+  /* Teal for specific badges */
+  --border-color: #eaeaec;
+  --card-bg: #ffffff;
+  --hover-bg: #f5f5f6;
+
+  /* Typography */
+  --font-display: 'Quicksand', sans-serif;
+  /* Friendly Headings */
+  --font-body: 'Nunito', sans-serif;
+  /* Rounded Body Text */
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 80px;
+  --border-radius: 8px;
+  /* Slightly rounded */
+
+  /* Animation */
+  --transition-smooth: all 0.3s ease;
 }

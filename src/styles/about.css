@@ -1,370 +1,392 @@
-/* About Page Styles */
-.about-page {
-    background-color: var(--bg-color);
-    color: var(--text-main);
+/* About Page Elite Styles */
+.about-page-elite {
+    background-color: #000;
+    color: #fff;
     overflow-x: hidden;
 }
 
-.about-hero {
+/* ELITE HERO V2 */
+.about-hero-v2 {
     height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-}
-
-.about-hero-content {
-    padding: 0 4rem;
-    padding-top: 100px;
-}
-
-.about-hero-content h1 {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 7vw, 7rem);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-}
-
-.about-hero-img {
-    height: 100%;
-    overflow: hidden;
-}
-
-.about-hero-img img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.about-manifesto {
-    padding: 10rem 0;
-    text-align: center;
-}
-
-.manifesto-text {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    line-height: 1.4;
-    max-width: 900px;
-    margin: 0 auto;
-    color: #ddd;
-}
-
-.about-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 80vh;
-}
-
-.split-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.split-text {
-    padding: 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.split-text h2 {
-    font-family: var(--font-display);
-    font-size: 5rem;
-    line-height: 0.9;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-}
-
-.split-text p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 3rem;
-    max-width: 400px;
-}
-
-.stats {
-    display: flex;
-    gap: 4rem;
-}
-
-.stats div {
-    display: flex;
-    flex-direction: column;
-}
-
-.stats span {
-    font-size: 3rem;
-    font-family: var(--font-display);
-    line-height: 1;
-}
-
-.stats small {
-    text-transform: uppercase;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-}
-
-.about-commitment {
-    padding: 10rem 0;
-    background-color: #000;
-    color: #fff;
-}
-
-.about-commitment h2 {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    margin-bottom: 6rem;
-    text-transform: uppercase;
-}
-
-.commitment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 4rem;
-}
-
-.commitment-item h3 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-muted);
-}
-
-.commitment-item h4 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.commitment-item p {
-    color: #aaa;
-    line-height: 1.6;
-}
-
-.about-philosophy {
-    height: 60vh;
-    background-image: url('https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?q=80&w=2070&auto=format&fit=crop');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.about-philosophy::before {
-    content: '';
+.hero-v2-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    /* For parallax */
+    z-index: 1;
+}
+
+.hero-v2-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero-v2-vignette {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: radial-gradient(circle, transparent 20%, #000 100%);
+    z-index: 2;
 }
 
-.philosophy-content {
+.hero-v2-content {
     position: relative;
-    z-index: 1;
+    z-index: 3;
     text-align: center;
-    padding: 0 2rem;
+}
+
+.hero-v2-tag {
+    font-size: 0.8rem;
     color: #fff;
-    max-width: 800px;
+    display: block;
+    margin-bottom: 3rem;
 }
 
-.philosophy-content h2 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3.5rem);
+.about-hero-v2 h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    margin-bottom: 4rem;
+}
+
+.hero-v2-meta {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.meta-item {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.meta-item span {
+    color: #fff;
+    margin-right: 0.8rem;
+}
+
+.scroll-indicator-v2 {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    letter-spacing: 0.6em;
+    opacity: 0.5;
+    z-index: 4;
+}
+
+/* KINETIC MANIFESTO V2 */
+.about-manifesto-v2 {
+    padding: 15rem 10%;
+    background: #000;
+}
+
+.manifesto-v2-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.manifesto-v2-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4.5vw, 4rem);
     line-height: 1.2;
-    margin-bottom: 2rem;
-    font-style: italic;
+    font-weight: 300;
+    text-align: center;
 }
 
-.philosophy-content p {
-    font-size: 1.2rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+/* STORY V2 GRID */
+.about-story-v2 {
+    background: #000;
+    padding: 10rem 5%;
 }
 
-.about-materiality {
+.story-v2-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 80vh;
-    background-color: var(--bg-color);
+    gap: 8rem;
+    align-items: center;
 }
 
-.material-text {
-    padding: 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.story-v2-visual {
+    height: 90vh;
+    overflow: hidden;
 }
 
-.material-text h2 {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
+.visual-v2-box {
+    width: 100%;
+    height: 100%;
 }
 
-.material-text p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 3rem;
-    max-width: 500px;
-    line-height: 1.6;
-}
-
-.material-list {
-    list-style: none;
-    padding: 0;
-}
-
-.material-list li {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1.5rem 0;
-    color: var(--text-main);
-}
-
-.material-img img {
+.visual-v2-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.about-join {
-    padding: 10rem 0;
-    text-align: center;
-    background-color: #000;
-    color: #fff;
+.story-v2-content {
+    padding-right: 5%;
 }
 
-.about-join h2 {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 6vw, 6rem);
-    text-transform: uppercase;
+.story-v2-num {
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 3rem;
+    display: block;
+}
+
+.story-v2-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    margin-bottom: 3rem;
+    font-weight: 900;
+}
+
+.story-v2-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4rem;
+}
+
+.story-v2-stats {
+    display: flex;
+    gap: 6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 4rem;
+}
+
+.v2-stat h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.v2-stat p {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0;
+}
+
+/* PHILOSOPHY V2 */
+.about-philosophy-v2 {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-v2-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.philosophy-v2-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.philosophy-v2-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #000, transparent, #000);
+}
+
+.philosophy-v2-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.philosophy-v2-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.philosophy-v2-content h2 span {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* MATERIALITY V2 */
+.about-materiality-v2 {
+    padding: 10rem 5%;
+    background: #000;
+}
+
+.material-v2-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 3rem;
+}
+
+.material-v2-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.material-v2-count {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.material-v2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.material-v2-item {
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.6s var(--ease-out-expo);
+}
+
+.material-v2-item:hover {
+    transform: translateY(-20px);
+}
+
+.m-img-box {
+    height: 400px;
+    overflow: hidden;
+}
+
+.m-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.m-text-box {
+    padding: 3rem;
+}
+
+.m-text-box span {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.m-text-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.m-text-box p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+/* JOIN THE FUTURE V2 */
+.about-join-v2 {
+    padding: 10rem 5%;
+    background: #000;
+}
+
+.join-v2-container {
+    background: #0a0a0a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.join-v2-visual {
+    height: 600px;
+}
+
+.join-v2-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.join-v2-content {
+    padding: 6rem;
+}
+
+.join-v2-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 0.9;
     margin-bottom: 2rem;
 }
 
-.about-join p {
+.join-v2-content p {
     font-size: 1.2rem;
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.4);
     margin-bottom: 4rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.join-btn {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+.join-btn-v2 {
+    padding: 1.2rem 3rem;
     background: #fff;
     color: #000;
     border: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.4s var(--ease-out-expo);
 }
 
-.join-btn:hover {
+.join-btn-v2:hover {
     background: transparent;
     color: #fff;
     border: 1px solid #fff;
 }
 
-@media (max-width: 900px) {
-    .about-materiality {
+@media (max-width: 1024px) {
+
+    .story-v2-grid,
+    .join-v2-container,
+    .material-v2-grid {
         grid-template-columns: 1fr;
     }
 
-    .material-img {
+    .story-v2-visual,
+    .join-v2-visual {
         height: 50vh;
-        order: -1;
-    }
-
-    .material-text {
-        padding: 4rem 2rem;
-    }
-
-    .about-join {
-        padding: 6rem 2rem;
-    }
-
-    .about-hero,
-    .about-split {
-        grid-template-columns: 1fr;
-    }
-
-    .about-hero {
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .about-hero-img {
-        height: 50vh;
-        order: -1;
-    }
-
-    .about-hero-content {
-        padding: 4rem 2rem;
-    }
-
-    .split-text {
-        padding: 4rem 2rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .about-hero-content h1 {
-        font-size: 3.5rem;
-    }
-
-    .manifesto-text {
-        font-size: 1.5rem;
-        padding: 0 1.5rem;
-    }
-
-    .about-manifesto,
-    .about-commitment {
-        padding: 6rem 0;
-    }
-
-    .split-text h2,
-    .about-commitment h2,
-    .material-text h2 {
-        font-size: 3rem;
-    }
-
-    .stats {
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .stats span {
-        font-size: 2.5rem;
-    }
-
-    .commitment-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding-top: 3rem;
-    }
-
-    .about-philosophy {
-        height: 50vh;
-    }
-
-    .philosophy-content h2 {
-        font-size: 2rem;
-    }
-
-    .about-join h2 {
-        font-size: 3rem;
     }
 }

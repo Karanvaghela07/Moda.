@@ -1,0 +1,197 @@
+/* Premium Product Card Styles (Light Editorial Theme) */
+
+.premium-product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+}
+
+.ppc-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/22;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 0;
+    /* Sharp, editorial edges */
+}
+
+.ppc-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.ppc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.5s ease;
+}
+
+.ppc-main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.ppc-hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ppc-main-img.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ppc-hover-img.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+}
+
+/* Badges */
+.ppc-badges {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+}
+
+.ppc-badge {
+    background: #000;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.65rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Wishlist Button */
+.ppc-wishlist-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.ppc-wishlist-btn:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+/* Quick Action Overlay */
+.ppc-quick-action {
+    position: absolute;
+    bottom: -100%;
+    /* Initially hidden below */
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem;
+    transition: bottom 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.ppc-quick-action.slide-up {
+    bottom: 0;
+}
+
+.ppc-add-btn {
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 0.9rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ppc-add-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.ppc-add-btn svg {
+    transition: stroke 0.3s ease;
+}
+
+.ppc-add-btn:hover svg {
+    stroke: #000;
+}
+
+/* Info Section */
+.ppc-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+.ppc-info-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ppc-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ppc-category {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ppc-price-row {
+    margin-top: 0.3rem;
+}
+
+.ppc-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+}

@@ -3,16 +3,21 @@ import ProductCard from './ProductCard';
 import { products } from '../data/products';
 import '../styles/products.css';
 
-const ProductGrid = ({ products: propProducts }) => {
-    const displayProducts = propProducts || products;
+const ProductGrid = ({ products: propProducts, limit, hideHeader = false }) => {
+    let displayProducts = propProducts || products;
+    if (limit) {
+        displayProducts = displayProducts.slice(0, limit);
+    }
 
     return (
-        <section className="product-section">
+        <section className={`product-section ${hideHeader ? 'no-header' : ''}`}>
             <div className="container">
-                <div className="section-header">
-                    <h2>Latest Arrivals</h2>
-                    <a href="/shop" className="view-all">View All</a>
-                </div>
+                {!hideHeader && (
+                    <div className="section-header">
+                        <h2>Latest Arrivals</h2>
+                        <a href="/shop" className="view-all">View All</a>
+                    </div>
+                )}
 
                 <div className="product-grid">
                     {displayProducts.map((product) => (

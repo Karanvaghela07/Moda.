@@ -1,0 +1,1036 @@
+/* ============================================================
+   ORDER DETAILS — NEXT LEVEL PREMIUM LIGHT DESIGN
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ── Root Variables ─────────────────────────────────────── */
+:root {
+    --od-green: #1a9e5c;
+    --od-green-lt: #e8fbf2;
+    --od-green-mid: #b7f0d5;
+    --od-amber: #f59e0b;
+    --od-amber-lt: #fffbeb;
+    --od-red: #e11b23;
+    --od-bg: #f5f6f8;
+    --od-white: #ffffff;
+    --od-text: #111111;
+    --od-muted: #888888;
+    --od-border: rgba(0, 0, 0, 0.07);
+    --od-shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --od-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --od-radius: 22px;
+    --od-font-head: 'Quicksand', sans-serif;
+    --od-font-body: 'Space Grotesk', sans-serif;
+}
+
+/* ── Page ───────────────────────────────────────────────── */
+.od-page {
+    min-height: 100vh;
+    background: var(--od-bg);
+    font-family: var(--od-font-body);
+    padding-top: 105px;
+    padding-bottom: 6rem;
+    color: var(--od-text);
+}
+
+.od-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ════════════════════════════════════════════════════
+   HERO DELIVERY BANNER
+════════════════════════════════════════════════════ */
+.od-hero {
+    border-radius: var(--od-radius);
+    background: linear-gradient(135deg, #f0fef7 0%, #dcfce7 50%, #bbf7d0 100%);
+    border: 1px solid var(--od-green-mid);
+    padding: 2.5rem 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.od-hero::before {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(26, 158, 92, 0.08);
+}
+
+.od-hero::after {
+    content: '';
+    position: absolute;
+    right: 60px;
+    bottom: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(26, 158, 92, 0.05);
+}
+
+.od-hero-left {
+    position: relative;
+    z-index: 1;
+}
+
+.od-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
+    color: var(--od-green);
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+    background: rgba(26, 158, 92, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+}
+
+.od-hero-title {
+    font-family: var(--od-font-head);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: #064e3b;
+    margin: 0 0 0.5rem;
+}
+
+.od-hero-sub {
+    font-size: 0.9rem;
+    color: #15803d;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.od-hero-right {
+    position: relative;
+    z-index: 1;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.od-eta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #15803d;
+    opacity: 0.7;
+    margin: 0 0 0.3rem;
+}
+
+.od-eta-date {
+    font-family: var(--od-font-head);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #064e3b;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.od-order-id-pill {
+    margin-top: 0.6rem;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--od-green);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--od-green-mid);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+}
+
+/* ════════════════════════════════════════════════════
+   HORIZONTAL PROGRESS STEPPER
+════════════════════════════════════════════════════ */
+.od-stepper-card {
+    background: var(--od-white);
+    border-radius: var(--od-radius);
+    padding: 2.2rem 2.5rem;
+    box-shadow: var(--od-shadow-sm);
+    border: 1px solid var(--od-border);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.od-stepper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.od-stepper-heading {
+    font-family: var(--od-font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--od-text);
+    margin: 0;
+}
+
+.od-stepper-date {
+    font-size: 0.78rem;
+    color: var(--od-muted);
+}
+
+/* Horizontal stepper track */
+.od-stepper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* background connector line */
+.od-stepper-track {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    height: 3px;
+    background: #e9eaec;
+    border-radius: 3px;
+    z-index: 0;
+}
+
+/* animated fill */
+.od-stepper-fill {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--od-green), #6dd6a0);
+    border-radius: 3px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(26, 158, 92, 0.4);
+    transition: width 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Each step */
+.od-h-step {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    flex: 1;
+    cursor: default;
+}
+
+.od-h-step-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Completed */
+.od-h-step.completed .od-h-step-icon {
+    background: linear-gradient(135deg, #1a9e5c, #2dbd76);
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(26, 158, 92, 0.35);
+    border: 3px solid #fff;
+    outline: 2px solid rgba(26, 158, 92, 0.2);
+}
+
+/* Active */
+.od-h-step.active .od-h-step-icon {
+    background: var(--od-white);
+    border: 3px solid var(--od-amber);
+    color: var(--od-amber);
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25), 0 0 0 7px rgba(245, 158, 11, 0.08);
+    animation: hActiveRing 2s ease infinite;
+}
+
+@keyframes hActiveRing {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2), 0 0 0 6px rgba(245, 158, 11, 0.07);
+    }
+
+    50% {
+        box-shadow: 0 4px 26px rgba(245, 158, 11, 0.4), 0 0 0 11px rgba(245, 158, 11, 0.05);
+    }
+}
+
+/* Pending */
+.od-h-step.pending .od-h-step-icon {
+    background: #f5f5f5;
+    border: 2px dashed #d1d5db;
+    color: #ccc;
+}
+
+.od-h-step-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+}
+
+.od-h-step.completed .od-h-step-label {
+    color: #333;
+}
+
+.od-h-step.active .od-h-step-label {
+    color: var(--od-amber);
+}
+
+.od-h-step.pending .od-h-step-label {
+    color: #c5c9d0;
+}
+
+.od-h-step-date {
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.od-h-step.completed .od-h-step-date {
+    color: var(--od-green);
+}
+
+.od-h-step.active .od-h-step-date {
+    color: var(--od-amber);
+}
+
+.od-h-step.pending .od-h-step-date {
+    color: #ddd;
+}
+
+/* ════════════════════════════════════════════════════
+   MAIN GRID
+════════════════════════════════════════════════════ */
+.od-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 1.8rem;
+    align-items: start;
+}
+
+/* Card base */
+.od-card {
+    background: var(--od-white);
+    border-radius: var(--od-radius);
+    padding: 2rem;
+    box-shadow: var(--od-shadow-sm);
+    border: 1px solid var(--od-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.od-card-label {
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #bbb;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+}
+
+/* ── Product Items ─────────────────────────────────────── */
+.od-item-row {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    transition: all 0.25s ease;
+    margin-bottom: 1rem;
+}
+
+.od-item-row:last-child {
+    margin-bottom: 0;
+}
+
+.od-item-row:hover {
+    border-color: #e0e0e0;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px);
+}
+
+.od-item-img-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.od-item-img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.od-item-qty-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--od-text);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+}
+
+.od-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.od-item-name {
+    font-family: var(--od-font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+    color: #111;
+}
+
+.od-item-meta {
+    font-size: 0.78rem;
+    color: #999;
+    margin: 0 0 0.15rem;
+}
+
+.od-item-size-pill {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 8px;
+    background: #f0f0f0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.04em;
+}
+
+.od-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.od-item-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.od-review-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--od-green);
+    border: 1px solid var(--od-green-mid);
+    background: var(--od-green-lt);
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.od-review-btn:hover {
+    background: var(--od-green);
+    color: #fff;
+    border-color: var(--od-green);
+}
+
+/* ── Sidebar Cards ───────────────────────────────────────── */
+.od-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Shipping card accent strip */
+.od-shipping-card {
+    overflow: hidden;
+}
+
+.od-shipping-map {
+    height: 100px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.od-shipping-map-pin {
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 1;
+    animation: pinBounce 2s ease infinite;
+}
+
+@keyframes pinBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.od-shipping-map::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px dashed rgba(56, 189, 248, 0.4);
+    animation: radarRing 3s linear infinite;
+}
+
+.od-shipping-map::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px dashed rgba(56, 189, 248, 0.3);
+    animation: radarRing 3s linear infinite 1s;
+}
+
+@keyframes radarRing {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.od-address-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.od-address-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--od-red);
+    flex-shrink: 0;
+}
+
+.od-address-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #bbb;
+    font-weight: 700;
+    margin: 0 0 0.3rem;
+}
+
+.od-address-text {
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Payment card */
+.od-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.87rem;
+    margin-bottom: 0.7rem;
+}
+
+.od-price-label {
+    color: var(--od-muted);
+}
+
+.od-price-value {
+    color: #111;
+    font-weight: 600;
+}
+
+.od-price-value.free {
+    color: var(--od-green);
+    font-weight: 700;
+    background: var(--od-green-lt);
+    padding: 0.15rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+}
+
+.od-total-divider {
+    border: none;
+    border-top: 1.5px dashed #eee;
+    margin: 1rem 0;
+}
+
+.od-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.od-total-amount {
+    font-size: 1.25rem;
+    font-family: var(--od-font-head);
+}
+
+.od-payment-method {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    background: #f9fafb;
+    border: 1.5px solid #eee;
+    font-size: 0.82rem;
+    color: #666;
+}
+
+/* Help card */
+.od-help-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.od-help-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.od-help-item:hover {
+    background: #fff;
+    border-color: #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateX(4px);
+}
+
+.od-help-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.od-help-chevron {
+    margin-left: auto;
+    color: #ccc;
+}
+
+/* ── Section Title (above grid) ──────────────────────────── */
+.od-section-title {
+    font-family: var(--od-font-head);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999;
+    margin: 0 0 0.8rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .od-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .od-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .od-hero-right {
+        text-align: center;
+    }
+
+    .od-stepper-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .od-h-step-label {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .od-page {
+        padding-top: 88px;
+    }
+
+    .od-card,
+    .od-stepper-card {
+        padding: 1.3rem;
+        border-radius: 16px;
+    }
+
+    .od-hero {
+        padding: 1.8rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .od-h-step-date {
+        display: none;
+    }
+}
+
+/* ════════════════════════════════════════════════════
+   BACK BUTTON
+════════════════════════════════════════════════════ */
+.od-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem 0;
+    transition: color 0.2s, gap 0.2s;
+    font-family: var(--od-font-body);
+}
+
+.od-back-btn:hover {
+    color: var(--od-green);
+    gap: 0.7rem;
+}
+
+.od-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--od-green);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 1.5px solid var(--od-green-mid);
+    border-radius: 12px;
+    background: var(--od-green-lt);
+    transition: all 0.2s;
+}
+
+.od-back-link:hover {
+    background: var(--od-green);
+    color: #fff;
+    border-color: var(--od-green);
+}
+
+/* ════════════════════════════════════════════════════
+   HERO — DELIVERED VARIANT
+════════════════════════════════════════════════════ */
+.od-hero.delivered {
+    background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 50%, #bfdbfe 100%);
+    border-color: #93c5fd;
+}
+
+.od-hero.delivered .od-hero-eyebrow {
+    color: #1d4ed8;
+    background: rgba(29, 78, 216, 0.08);
+}
+
+.od-hero.delivered .od-hero-title,
+.od-hero.delivered .od-eta-date {
+    color: #1e3a8a;
+}
+
+.od-hero.delivered .od-hero-sub,
+.od-hero.delivered .od-eta-label {
+    color: #1d4ed8;
+}
+
+.od-hero.delivered .od-order-id-pill {
+    color: #1d4ed8;
+    border-color: #93c5fd;
+}
+
+.od-hero.delivered::before {
+    background: rgba(29, 78, 216, 0.06);
+}
+
+.od-hero.delivered::after {
+    background: rgba(29, 78, 216, 0.04);
+}
+
+/* Hero pulsing dot */
+.od-hero-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulseDot 1.8s ease infinite;
+}
+
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.65);
+    }
+}
+
+/* ETA sub-text */
+.od-eta-sub {
+    font-size: 0.75rem;
+    color: #15803d;
+    margin: 0.3rem 0 0;
+    opacity: 0.8;
+}
+
+/* ════════════════════════════════════════════════════
+   HELP ITEM TEXT
+════════════════════════════════════════════════════ */
+.od-help-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.od-help-sub {
+    font-size: 0.72rem;
+    color: #aaa;
+    margin-top: 0.1rem;
+}
+
+/* ════════════════════════════════════════════════════
+   LOADING SPINNER
+════════════════════════════════════════════════════ */
+.od-spinner {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid #eee;
+    border-top-color: var(--od-green);
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ════════════════════════════════════════════════════
+   REVIEW MODAL
+════════════════════════════════════════════════════ */
+.od-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.od-modal {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.od-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: background 0.2s;
+}
+
+.od-modal-close:hover {
+    background: #eee;
+}
+
+.od-modal-eyebrow {
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #bbb;
+    font-weight: 700;
+    margin: 0 0 1.2rem;
+}
+
+.od-modal-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.od-modal-thumb {
+    width: 48px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.od-stars {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.od-star {
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.od-star:hover {
+    transform: scale(1.15);
+}
+
+.od-modal-submit {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 12px;
+    border: none;
+    background: #eee;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: not-allowed;
+    font-family: var(--od-font-body);
+    transition: all 0.25s;
+}
+
+.od-modal-submit.active {
+    background: var(--od-green);
+    color: #fff;
+    cursor: pointer;
+}
+
+.od-modal-submit.active:hover {
+    background: #158a4e;
+}
+
+.od-modal-success {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.od-modal-success-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--od-green-lt);
+    border: 2px solid var(--od-green-mid);
+    color: var(--od-green);
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.od-modal-success p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}

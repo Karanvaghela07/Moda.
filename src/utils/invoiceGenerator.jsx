@@ -1,0 +1,284 @@
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import Invoice from '../components/Invoice';
+
+export const generateInvoice = (order) => {
+    // Render the Invoice component to a static HTML string
+    const invoiceHtml = ReactDOMServer.renderToStaticMarkup(<Invoice order={order} />);
+
+    // Create a new window for printing
+    const printWindow = window.open('', '_blank');
+
+    if (printWindow) {
+        printWindow.document.write(`
+            <html>
+                <head>
+                    <title>Invoice #${order.id}</title>
+                    <style>
+                        /* Base Print Reset */
+                        body { margin: 0; padding: 0; background-color: #555; display: flex; justify-content: center; padding-top: 2rem; }
+                        
+                        /* Inline styles from invoice.css to ensure they apply in the new window */
+                        /* Premium Invoice Styles */
+                        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+                        .invoice-container {
+                            width: 800px; /* Fixed width for preview */
+                            margin: 0 auto;
+                            background: #fff;
+                            font-family: 'Space Grotesk', sans-serif;
+                            color: #111;
+                            overflow: hidden;
+                            position: relative;
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                            -webkit-print-color-adjust: exact;
+                            print-color-adjust: exact;
+                        }
+
+                        /* Header */
+                        .inv-header {
+                            background: #111;
+                            color: #fff;
+                            padding: 3rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .inv-header::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 4px;
+                            background: #e11b23;
+                        }
+
+                        .inv-brand {
+                            display: flex;
+                            align-items: center;
+                            gap: 1.5rem;
+                            z-index: 1;
+                        }
+
+                        .inv-logo {
+                            width: 60px;
+                            height: 60px;
+                            filter: invert(1);
+                        }
+
+                        .inv-brand-text h1 {
+                            font-family: 'Syncopate', sans-serif;
+                            font-weight: 700;
+                            font-size: 2.5rem;
+                            letter-spacing: 0.1em;
+                            margin: 0;
+                            line-height: 1;
+                        }
+
+                        .inv-brand-text p {
+                            font-size: 0.8rem;
+                            color: #888;
+                            margin: 0;
+                            letter-spacing: 0.2em;
+                            text-transform: uppercase;
+                        }
+
+                        .inv-title {
+                            text-align: right;
+                            z-index: 1;
+                        }
+
+                        .inv-title h2 {
+                            font-size: 3.5rem;
+                            font-weight: 700;
+                            color: #222;
+                            margin: 0;
+                            line-height: 0.8;
+                            letter-spacing: -0.05em;
+                            text-transform: uppercase;
+                        }
+
+                        .inv-title span {
+                            color: #e11b23;
+                            font-size: 1rem;
+                            letter-spacing: 0.5em;
+                            font-weight: 700;
+                            display: block;
+                            margin-top: 0.5rem;
+                            text-transform: uppercase;
+                        }
+
+                        /* Meta Grid */
+                        .inv-meta {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 2rem;
+                            padding: 3rem;
+                            border-bottom: 1px solid #eee;
+                        }
+
+                        .meta-group h3 {
+                            font-size: 0.75rem;
+                            text-transform: uppercase;
+                            color: #888;
+                            letter-spacing: 0.1em;
+                            margin-bottom: 0.8rem;
+                            font-weight: 600;
+                            font-family: sans-serif;
+                        }
+
+                        .meta-group p {
+                            font-size: 1rem;
+                            font-weight: 500;
+                            margin: 0;
+                            line-height: 1.5;
+                        }
+
+                        .meta-group .highlight {
+                            color: #e11b23;
+                            font-weight: 700;
+                        }
+
+                        /* Table */
+                        .inv-body {
+                            padding: 2rem 3rem;
+                            min-height: 200px;
+                        }
+
+                        .inv-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-bottom: 2rem;
+                        }
+
+                        .inv-table th {
+                            text-align: left;
+                            font-size: 0.8rem;
+                            text-transform: uppercase;
+                            color: #888;
+                            padding-bottom: 1rem;
+                            border-bottom: 2px solid #111;
+                            letter-spacing: 0.05em;
+                            font-family: sans-serif;
+                        }
+
+                        .inv-table td {
+                            padding: 1.5rem 0;
+                            border-bottom: 1px solid #eee;
+                            font-weight: 500;
+                        }
+
+                        .inv-table td.qty {
+                            text-align: center;
+                        }
+
+                        .inv-table td.price {
+                            text-align: right;
+                        }
+
+                        .item-name {
+                            font-weight: 700;
+                            display: block;
+                            font-size: 1.1rem;
+                        }
+
+                        .item-sku {
+                            font-size: 0.8rem;
+                            color: #888;
+                            font-weight: 400;
+                        }
+
+                        /* Summary */
+                        .inv-summary {
+                            display: flex;
+                            justify-content: flex-end;
+                            padding: 0 3rem 3rem;
+                        }
+
+                        .summary-box {
+                            width: 300px;
+                        }
+
+                        .summary-row {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 0.8rem;
+                            font-size: 0.95rem;
+                            color: #555;
+                        }
+
+                        .summary-row.total {
+                            border-top: 2px solid #111;
+                            padding-top: 1rem;
+                            margin-top: 1rem;
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: #111;
+                        }
+
+                        .summary-row.total span:last-child {
+                            color: #e11b23;
+                        }
+
+                        /* Footer */
+                        .inv-footer {
+                            background: #f9f9f9;
+                            padding: 2rem 3rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            border-top: 1px dashed #ddd;
+                        }
+
+                        .inv-message {
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            color: #111;
+                            text-transform: uppercase;
+                            letter-spacing: 0.05em;
+                        }
+
+                        .inv-contact {
+                            text-align: right;
+                            font-size: 0.8rem;
+                            color: #888;
+                        }
+
+                        /* Print Specific */
+                        @media print {
+                            body {
+                                background: #fff;
+                                padding: 0;
+                                margin: 0;
+                                display: block;
+                            }
+                            
+                            .invoice-container {
+                                width: 100%;
+                                max-width: none;
+                                margin: 0;
+                                box-shadow: none;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${invoiceHtml}
+                    <script>
+                        // Auto-print when loaded
+                        window.onload = function() {
+                            setTimeout(function() {
+                                window.print();
+                            }, 500);
+                        }
+                    </script>
+                </body>
+            </html>
+        `);
+        printWindow.document.close();
+    }
+};

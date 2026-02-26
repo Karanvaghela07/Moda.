@@ -2,37 +2,41 @@ import React from 'react';
 import { Instagram, Twitter, Facebook } from 'lucide-react';
 import '../styles/footer.css';
 
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
     return (
-        <footer className="footer-section">
-            <div className="container">
+        <footer className="footer">
+            <div className="container footer-container">
                 <div className="footer-top">
                     <div className="footer-brand">
-                        <h2>MODA.</h2>
-                        <p>Elevating everyday essentials.</p>
+                        <img src="/logo.svg" alt="The Indie Store" style={{ height: '60px', marginBottom: '1rem' }} />
+                        <p className="footer-tagline">The Vibe Vault.</p>
                     </div>
 
                     <div className="footer-links">
                         <div className="link-column">
                             <h4>Shop</h4>
-                            <a href="/shop">New Arrivals</a>
-                            <a href="/shop">Best Sellers</a>
-                            <a href="/collections">Accessories</a>
-                            <a href="/shop">Sale</a>
+                            <Link to="/new-arrivals">New Arrivals</Link>
+                            <Link to="/best-sellers">Best Sellers</Link>
+                            <Link to="/accessories">Accessories</Link>
+                            <Link to="/sale">Sale</Link>
                         </div>
-
-                        <div className="link-column">
-                            <h4>About</h4>
-                            <a href="/about">Our Story</a>
-                            <a href="/about">Sustainability</a>
-                            <a href="/careers">Careers</a>
-                        </div>
-
                         <div className="link-column">
                             <h4>Support</h4>
-                            <a href="/faq">FAQ</a>
-                            <a href="/shipping">Shipping</a>
-                            <a href="/returns">Returns</a>
+                            <Link to="/support">Support Home</Link>
+                            <Link to="/faq">FAQ</Link>
+                            <Link to="/shipping">Shipping</Link>
+                            <Link to="/returns">Returns</Link>
+                            <Link to="/contact">Contact Us</Link>
+                        </div>
+                        <div className="link-column">
+                            <h4>Company</h4>
+                            <Link to="/about">About Us</Link>
+                            <Link to="/careers">Careers</Link>
+                            <Link to="/sustainability">Sustainability</Link>
+                            <Link to="/terms">Terms & Conditions</Link>
+                            <Link to="/privacy">Privacy Policy</Link>
                         </div>
                     </div>
 
@@ -46,7 +50,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; 2026 MODA Inc. All rights reserved.</p>
+                    <p>&copy; 2026 The Indie Store Inc. All rights reserved.</p>
                     <div className="social-links">
                         <Instagram size={20} />
                         <Twitter size={20} />

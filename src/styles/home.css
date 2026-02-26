@@ -1,173 +1,826 @@
-/* Brand Manifesto Marquee */
-.brand-marquee {
+/* THE SOULED STORE THEME - DEFINITIVE */
+
+:root {
+    --bg-color: #f5f5f5;
+    /* Light Grey Background */
+    --text-primary: #111;
+    --text-secondary: #58595b;
+    --accent-red: #e11b23;
+    --font-heading: 'Quicksand', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+    --border-radius: 8px;
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-body);
+}
+
+.commercial-home {
     background: var(--bg-color);
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-    padding: 2rem 0;
-    overflow: hidden;
-    white-space: nowrap;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 1. HERO SLIDER - ROUNDED & FRIENDLY */
+.promo-hero-container {
     position: relative;
-    display: flex;
+    width: 100%;
+    height: 60vh;
+    max-height: 500px;
+    overflow: hidden;
+    margin-top: 80px;
+    /* Navbar offset */
+    border-radius: 0;
 }
 
-.marquee-content {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-    padding-left: 100%;
-    /* Start off-screen */
-}
-
-.marquee-item {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    text-transform: uppercase;
-    margin-right: 4rem;
-    color: var(--text-muted);
-    /* Or transparent with stroke */
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-    color: transparent;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
+@media (min-width: 768px) {
+    .promo-hero-container {
+        width: 95%;
+        margin: 100px auto 20px;
+        border-radius: 16px;
+        /* Rounded hero on desktop */
     }
 }
 
-/* Editorial Grid */
-.editorial-section {
-    padding: 6rem 0;
-    background: var(--bg-color);
-}
-
-.editorial-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
-    height: 80vh;
-    /* Adjust height */
-}
-
-.editorial-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.editorial-item img {
+.hero-slide {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
 }
 
-.editorial-item:hover img {
-    transform: scale(1.05);
-}
-
-.editorial-item.large {
-    grid-column: span 8;
-    grid-row: span 2;
-}
-
-.editorial-item.small {
-    grid-column: span 4;
-}
-
-.editorial-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.slide-bg {
     width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
-}
-
-.editorial-item:hover .editorial-overlay {
-    transform: translateY(0);
-}
-
-/* Video / Parallax Section */
-.video-section {
+    height: 100%;
+    object-fit: contain;
+    /* Ensure scale down only so it fits */
     position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 2;
+    object-position: center bottom;
 }
 
-.video-bg {
+.slide-bg-blur {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    filter: brightness(0.6);
+    background-size: cover;
+    background-position: center;
+    filter: blur(25px) brightness(0.6);
+    transform: scale(1.1);
+    /* Prevent blur edges */
+    z-index: 1;
 }
 
-.video-content {
+
+
+.slide-content {
+    display: none;
+    /* Souled Store usually has text ON image */
+}
+
+/* DOTS */
+.Hero-dots {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.Hero-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.Hero-dots .dot.active {
+    background: var(--accent-red);
+    transform: scale(1.2);
+}
+
+/* 2. PREMIUM CATEGORY CIRCLES */
+.premium-category-section {
+    padding: 6rem 1rem 4rem;
     position: relative;
     z-index: 10;
-    text-align: center;
-    max-width: 800px;
-    padding: 0 2rem;
+    margin-top: -30px;
+    /* Slight overlap with slider for depth */
 }
 
-.video-content h2 {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 6vw, 5rem);
-    margin-bottom: 2rem;
-    line-height: 1;
-}
-
-/* Instagram / Community Feed */
-.insta-feed {
-    padding: 6rem 0;
-    background: #0f0f0f;
-}
-
-.insta-grid {
+.premium-category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 0;
-    /* Tight grid */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-.insta-item {
-    aspect-ratio: 1;
-    position: relative;
-    overflow: hidden;
+.premium-cat-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.premium-cat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
     cursor: pointer;
 }
 
-.insta-item img {
+.premium-cat-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Soft luxury shadow */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.premium-cat-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.3s;
+    transition: transform 0.8s ease;
 }
 
-.insta-item:hover img {
+.premium-cat-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.premium-cat-item:hover .premium-cat-img-wrapper {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.premium-cat-item:hover .premium-cat-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.premium-cat-item:hover .premium-cat-overlay {
+    opacity: 1;
+}
+
+.premium-cat-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.premium-cat-item:hover .premium-cat-name {
+    color: #e11b23;
+    /* Or keep black based on strict theme */
+}
+
+
+/* 3. PREMIUM MARQUEE (BANNER STRIP) */
+.premium-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+    /* Sleek dark stripe */
+    color: #fff;
+    padding: 1.5rem 0;
+    margin: 4rem 0;
+    display: flex;
+    white-space: nowrap;
+    position: relative;
+}
+
+.premium-marquee-track {
+    display: inline-flex;
+    animation: premiumMarqueeScroll 25s linear infinite;
+}
+
+.premium-marquee-content {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 2rem;
+    /* Initial gap */
+}
+
+.premium-marquee-content span {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.marquee-dot {
+    margin: 0 3rem;
+    color: var(--accent-red);
+    /* #e11b23 */
+    font-size: 1.5rem !important;
+    /* Make the dot larger */
+}
+
+@keyframes premiumMarqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Scrolls 2 of the 4 duplicates for a seamless loop */
+}
+
+
+/* 4. SECTIONS (TRENDING & BEST SELLERS) */
+.section-container {
+    padding: 4rem 1rem 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header-commercial {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header-commercial h2 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.header-line {
+    width: 80px;
+    height: 3px;
+    background: #111;
+    margin: 0 auto;
+}
+
+
+/* 5. MID BANNER - LUXURY EDIT */
+.commercial-banner-mid {
+    position: relative;
+    width: 100%;
+    /* Full bleed luxury */
+    height: 70vh;
+    min-height: 500px;
+    margin: 4rem 0;
+    overflow: hidden;
+}
+
+.commercial-banner-mid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.banner-content-mid {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
+}
+
+.banner-content-mid h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Ensure legibility */
+}
+
+.banner-content-mid button {
+    background: #fff;
+    color: #111;
+    padding: 1.2rem 3rem;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.banner-content-mid button:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive Adjustments for New Sections */
+@media (max-width: 1024px) {
+    .premium-category-grid {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        row-gap: 2.5rem;
+    }
+
+    .premium-category-section {
+        padding-top: 4rem;
+        margin-top: 0;
+    }
+
+    .commercial-banner-mid {
+        height: 50vh;
+    }
+
+    .banner-content-mid {
+        left: 5%;
+        right: 5%;
+        text-align: center;
+    }
+
+    .banner-content-mid h3 {
+        font-size: 3rem;
+    }
+}
+
+/* MODERN HERO STYLES */
+.modern-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-top: -80px;
+    /* Counteract navbar spacing if needed, assumes transparent navbar */
+}
+
+/* Ensure navbar overlays hero if transparent */
+/* You might need to adjust this depending on global nav styles */
+/* Navbar transparency removed to match Souled Store solid white style */
+
+
+.modern-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.modern-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    /* Focus on the model's face/upper body */
+}
+
+.modern-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.modern-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 60px;
+    /* Visual balance */
+}
+
+.hero-text-wrapper {
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    /* Use a premium serif font if available, or fallback */
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.9;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.hero-title.outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
     opacity: 0.8;
 }
 
-.insta-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s;
+.overflow-hidden {
+    overflow: hidden;
 }
 
-.insta-item:hover .insta-icon {
+.hero-actions {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.primary-btn {
+    background: #fff;
+    color: #000;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    /* Sharp edges for luxury feel */
+}
+
+.primary-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.video-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.video-btn .play-icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.video-btn:hover .play-icon {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    /* Left align is trendy */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+}
+
+.scroll-indicator .line {
+    width: 60px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .modern-hero {
+        margin-top: 0;
+        /* Reset on mobile if navbar handling is different */
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* SOULED STORE STYLE SLIDER */
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    /* SOULED STORE typically puts the slider BELOW the navbar. */
+    margin-top: 60px;
+    /* Tighter fit */
+    height: auto;
+    /* Aspect ratio mainly for the image part, we'll handle container height via content or padding */
+    background: #fff;
+    padding-bottom: 0px;
+    overflow: hidden;
+}
+
+/* Reverted gradient fade for strict style */
+
+
+.hero-slide-item {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Wrapper for the image part to maintain aspect ratio */
+.hero-image-wrapper {
+    width: 100%;
+    /* Taller banner as requested */
+    aspect-ratio: 2.6/1;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right top;
+    display: block;
+}
+
+/* ARROWS */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
     opacity: 1;
+    /* Permanently visible */
+}
+
+.hero-slider-container:hover .slider-arrow {
+    opacity: 1;
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.slider-arrow.left {
+    left: 20px;
+}
+
+.slider-arrow.right {
+    right: 20px;
+}
+
+/* DOTS */
+.slider-dots-container {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    /* White background for dots area */
+    position: relative;
+    /* Static block flow */
+    bottom: auto;
+    z-index: 1;
+    margin-top: -5px;
+    /* Tiny pull up to connect to image if needed, or 0 */
+}
+
+.slider-dots {
+    position: static;
+    transform: none;
+    bottom: auto;
+    left: auto;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d1d1;
+    /* Light grey inactive */
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slider-dot.active {
+    background: #58595b;
+    /* Dark grey active like Souled Store */
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .hero-image-wrapper {
+        aspect-ratio: 1/1;
+    }
+
+    .hero-slider-container {
+        margin-top: 70px;
+        padding-bottom: 30px;
+    }
+
+    .slider-arrow {
+        display: none;
+        /* Hide arrows on mobile, use swipe (not implemented yet) or just autoplay */
+    }
+}
+
+/* Custom Text Overlay for Hero */
+.hero-slide-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+}
+
+.hero-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    /* Left aligned */
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 40%;
+}
+
+.hero-slide-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.hero-slide-title {
+    font-family: 'Playfair Display', serif;
+    /* Use Serif if possible, or fallback */
+    font-size: 3rem;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-slide-btn {
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid #111;
+    border-radius: 30px;
+    /* Pill shape */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.hero-slide-btn:hover {
+    background: #111;
+    color: #fff;
+}
+
+.slider-img {
+    object-position: 80% 20%;
+    /* Shift focus to right */
+}
+
+@media (max-width: 768px) {
+    .hero-text-overlay {
+        left: 5%;
+        max-width: 60%;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero-slide-title {
+        font-size: 2rem;
+    }
+
+    .slider-img {
+        object-position: center top;
+    }
+}
+
+/* ─── Mobile Responsiveness ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    .hero-title-word,
+    .hero-slide-title,
+    .modern-hero .hero-title {
+        font-size: 2.5rem !important;
+        /* Force scale down giant headings */
+    }
+
+    .section-header-commercial h2 {
+        font-size: 1.8rem;
+    }
+
+    .banner-content-mid h3 {
+        font-size: 2.2rem;
+    }
+
+    .premium-category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+.slider-img {
+    object-position: center center;
 }

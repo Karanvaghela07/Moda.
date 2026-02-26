@@ -36,7 +36,7 @@ export const products = [
         name: 'Pleated Midi Skirt',
         price: 150,
         category: 'Bottoms',
-        image1: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?q=80&w=1964&auto=format&fit=crop',
+        image1: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1964&auto=format&fit=crop',
         image2: 'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?q=80&w=1911&auto=format&fit=crop',
     },
     {
@@ -76,8 +76,8 @@ export const products = [
         name: 'Cargo Utility Pants',
         price: 110,
         category: 'Bottoms',
-        image1: 'https://images.unsplash.com/photo-1517445312882-b412afa232d8?q=80&w=1887&auto=format&fit=crop', // Streetwear cargo
-        image2: 'https://images.unsplash.com/photo-1514311538080-b25852932906?q=80&w=1887&auto=format&fit=crop',
+        image1: 'https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1887&auto=format&fit=crop',
+        image2: 'https://images.unsplash.com/photo-1584865288642-42078afe6942?q=80&w=1887&auto=format&fit=crop',
     },
     {
         id: 11,
@@ -92,8 +92,8 @@ export const products = [
         name: 'Chunky Knit Sweater',
         price: 135,
         category: 'Tops',
-        image1: 'https://images.unsplash.com/photo-1624835639697-750d75508c5c?q=80&w=1887&auto=format&fit=crop', // Cozy knit
-        image2: 'https://images.unsplash.com/photo-1582657321683-99b82143715c?q=80&w=1887&auto=format&fit=crop',
+        image1: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1887&auto=format&fit=crop',
+        image2: 'https://images.unsplash.com/photo-1614676471928-2ed0ad1061a4?q=80&w=1887&auto=format&fit=crop',
     },
     {
         id: 13,

@@ -1,45 +1,83 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Plus, Heart } from 'lucide-react';
+import { Heart, Star, CheckCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { useWishlist } from '../context/WishlistContext';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/products.css';
 
 const ProductCard = ({ product }) => {
     const { addToCart } = useCart();
+    const { toggleWishlist, isInWishlist } = useWishlist();
+    const navigate = useNavigate();
+
+    const inWishlist = isInWishlist(product.id);
+
+    // Flipkart/Amazon style pricing logic
+    const currentPrice = product.price * 80;
+    const mrpPrice = product.price * 120; // Simulated 33% markup
+
+    // Determine random delivery date (e.g., "Tomorrow") for Amazon feel
+    const deliveryNote = product.id % 2 === 0 ? "FREE Delivery Tomorrow" : "FREE Delivery by Friday";
+
     return (
         <motion.div
-            className="product-card"
-            initial={{ opacity: 0, y: 20 }}
+            className="az-product-card"
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-20px" }}
+            onClick={() => navigate(`/product/${product.id}`)}
         >
-            <div className="product-image-container">
-                <Link to={`/product/${product.id}`}>
-                    <img src={product.image1} alt={product.name} className="product-img main-img" />
-                    <img src={product.image2} alt={product.name} className="product-img hover-img" />
-                </Link>
-
-                <button className="icon-btn wishlist-btn">
-                    <Heart size={20} />
-                </button>
-
+            <div className="az-image-wrapper">
+                <img src={product.image1} alt={product.name} className="az-product-img" />
                 <button
-                    className="quick-add-btn"
-                    onClick={() => addToCart(product)}
+                    className="az-wishlist-circle"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        toggleWishlist(product);
+                    }}
                 >
-                    <Plus size={20} />
-                    <span>Quick Add</span>
+                    <Heart
+                        size={18}
+                        fill={inWishlist ? "#e11b23" : "none"}
+                        color={inWishlist ? "#e11b23" : "#888"}
+                    />
                 </button>
             </div>
 
-            <div className="product-info">
-                <div className="product-header">
-                    <h3>{product.name}</h3>
-                    <span className="price">${product.price}</span>
+            <div className="az-info-wrapper">
+                <div className="az-brand">THE INDIE STORE</div>
+                <h3 className="az-title" title={product.name}>{product.name}</h3>
+
+                <div className="az-rating-row">
+                    <div className="az-stars">
+                        {[1, 2, 3, 4].map(s => <Star key={s} size={14} fill="#FF9900" color="#FF9900" />)}
+                        <Star size={14} fill="none" color="#FF9900" />
+                    </div>
+                    <span className="az-rating-count">({Math.floor(Math.random() * 500) + 50})</span>
                 </div>
-                <p className="category">{product.category}</p>
+
+                <div className="az-price-row">
+                    <span className="currency">₹</span>
+                    <span className="az-current-price">{currentPrice.toLocaleString()}</span>
+                    <span className="az-mrp-price">₹{mrpPrice.toLocaleString()}</span>
+                    <span className="az-discount">(33% off)</span>
+                </div>
+
+                <div className="az-delivery">
+                    <CheckCircle size={12} color="#00A85A" style={{ display: 'inline', marginRight: '4px' }} />
+                    {deliveryNote}
+                </div>
+
+                <button
+                    className="az-add-cart-btn"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        addToCart(product);
+                    }}
+                >
+                    Add to cart
+                </button>
             </div>
         </motion.div>
     );

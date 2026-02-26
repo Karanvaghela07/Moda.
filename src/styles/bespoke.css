@@ -1,0 +1,1802 @@
+/* ==========================================================================
+   Bespoke Styles for Unique Category Pages
+   ========================================================================== */
+
+/* ─── MEN'S PAGE ── Clean Fashion Store (Myntra/Ajio style) ──────────────── */
+
+/* ── Promo ticker bar ───────────────────────────────────────────────────── */
+.mnh-root {
+    background: #fff;
+}
+
+.mnh-ticker {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 0.55rem 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.mnh-ticker-dot {
+    opacity: 0.3;
+}
+
+.mnh-ticker strong {
+    color: #e11b23;
+}
+
+/* ── Hero: split layout ─────────────────────────────────────────────────── */
+.mnh-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    min-height: 540px;
+    max-height: 620px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Left — text ──────────────────────────────────────────── */
+.mnh-hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 4rem 4rem 5%;
+    background: #f8f8f8;
+}
+
+.mnh-hero-season {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    color: #e11b23;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 1rem;
+}
+
+.mnh-hero-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #111;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.mnh-hero-title-red {
+    color: #e11b23;
+}
+
+.mnh-hero-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.65;
+    max-width: 360px;
+    margin: 0 0 2rem;
+}
+
+.mnh-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.mnh-btn-shop {
+    padding: 0.85rem 2rem;
+    background: #111;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.25s;
+    border: 2px solid #111;
+}
+
+.mnh-btn-shop:hover {
+    background: #e11b23;
+    border-color: #e11b23;
+    transform: translateY(-1px);
+}
+
+.mnh-btn-ghost {
+    padding: 0.85rem 1.5rem;
+    background: transparent;
+    color: #111;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.25s;
+}
+
+.mnh-btn-ghost:hover {
+    border-color: #111;
+    color: #111;
+}
+
+.mnh-trust-pills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.mnh-trust-pills span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Right — images ──────────────────────────────────────── */
+.mnh-hero-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    overflow: hidden;
+}
+
+.mnh-hero-img-main {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+}
+
+.mnh-hero-img-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.mnh-hero-img-small {
+    flex: 1;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    border-left: 3px solid #f8f8f8;
+}
+
+.mnh-hero-img-small:first-child {
+    border-bottom: 3px solid #f8f8f8;
+}
+
+.mnh-hero-img-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #e11b23;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.mnh-hero-img-label {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0.8rem;
+    background: rgba(255, 255, 255, 0.92);
+    color: #111;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ── Category chips ─────────────────────────────────────────────────────── */
+.mnh-cats {
+    background: #fff;
+    padding: 2rem 5%;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mnh-cats-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    margin: 0 0 1.2rem;
+    text-transform: uppercase;
+}
+
+.mnh-cats-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.mnh-cat-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    background: #f7f7f7;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.mnh-cat-chip:hover {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ── Existing promo grid & brand marquee below (keep working) ───────────── */
+.men-promo-grid-container {
+    padding: 2rem 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.men-promo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 350px);
+    gap: 1.5rem;
+}
+
+.men-promo-large {
+    grid-row: span 2;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.men-promo-small {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.men-promo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    color: #fff;
+}
+
+.men-promo-overlay h2 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin: 0 0 1rem;
+    font-weight: 700;
+}
+
+.men-promo-overlay h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+}
+
+.men-promo-overlay a {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    letter-spacing: 1px;
+}
+
+.men-promo-overlay p {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: #ffeb3b;
+    font-weight: 600;
+}
+
+@media (max-width: 968px) {
+    .men-promo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .men-promo-large {
+        grid-row: span 1;
+        height: 400px;
+    }
+
+    .men-promo-small {
+        height: 300px;
+    }
+}
+
+/* Brand Marquee */
+.men-brand-marquee {
+    padding: 3rem 0;
+    background: #0a0a0a;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    align-items: center;
+}
+
+.marquee-item {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 3rem;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.marquee-item:hover {
+    color: #e11b23;
+    -webkit-text-stroke: 1px #e11b23;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ── Category pills (if used elsewhere) ─────────────────────────────────── */
+.men-category-pills-container {
+    padding: 2.5rem 5%;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.men-pills-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.men-pills-scroll {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-wrap: wrap;
+}
+
+.men-pills-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.men-pill-item {
+    padding: 0.55rem 1.4rem;
+    background: #f7f7f7;
+    border: 1.5px solid #eee;
+    border-radius: 50px;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.men-pill-item:hover {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .mnh-hero {
+        grid-template-columns: 1fr;
+        max-height: none;
+    }
+
+    .mnh-hero-text {
+        padding: 3rem 5% 2rem;
+    }
+
+    .mnh-hero-images {
+        height: 400px;
+    }
+
+    .mnh-ticker {
+        gap: 0.75rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .mnh-hero-title {
+        font-size: 2rem;
+    }
+
+    .mnh-hero-images {
+        height: 280px;
+    }
+
+    .mnh-cats-row {
+        gap: 0.5rem;
+    }
+}
+
+
+
+/* ── Full-screen hero ──────────────────────────────────────────────────── */
+.msh-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 620px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding-bottom: 4rem;
+}
+
+.msh-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 20%;
+    transform: scale(1.05);
+    transition: transform 8s ease-out;
+    will-change: transform;
+}
+
+.msh-hero:hover .msh-bg {
+    transform: scale(1);
+}
+
+.msh-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(5, 5, 5, 0.82) 0%,
+            rgba(10, 10, 10, 0.60) 55%,
+            rgba(0, 0, 0, 0.25) 100%);
+}
+
+/* ── Floating side label ─────────────────────────────────────────────────── */
+.msh-side-label {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* ── Main content ────────────────────────────────────────────────────────── */
+.msh-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 6% 0;
+    color: #fff;
+    max-width: 820px;
+}
+
+.msh-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.msh-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(4rem, 9vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 0 0 2rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.msh-title-outline {
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.7);
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.msh-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 420px;
+}
+
+/* ── Action buttons ─────────────────────────────────────────────────────── */
+.msh-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+}
+
+.msh-btn-primary {
+    padding: 0.95rem 2.5rem;
+    background: #fff;
+    color: #111;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.msh-btn-primary:hover {
+    background: #e11b23;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(225, 27, 35, 0.4);
+}
+
+.msh-btn-ghost {
+    padding: 0.95rem 2rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.msh-btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Stats strip ────────────────────────────────────────────────────────── */
+.msh-stats {
+    display: flex;
+    gap: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 2rem;
+}
+
+.msh-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.msh-stat__num {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+}
+
+.msh-stat__label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+}
+
+/* ── Scroll indicator ───────────────────────────────────────────────────── */
+.msh-scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 6%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.msh-scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+    animation: msh-scroll-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes msh-scroll-pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1.15);
+    }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .msh-hero {
+        height: 85vh;
+        padding-bottom: 3rem;
+    }
+
+    .msh-title {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+    .msh-side-label {
+        display: none;
+    }
+
+    .msh-content {
+        padding: 0 5%;
+    }
+
+    .msh-stats {
+        gap: 1.5rem;
+    }
+}
+
+/* ── Category Pills (upgraded) ──────────────────────────────────────────── */
+.men-category-pills-container {
+    padding: 3.5rem 2rem;
+    background: #0a0a0a;
+}
+
+.men-pills-header {
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.men-pills-scroll {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.men-pills-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.men-pill-item {
+    padding: 0.65rem 1.75rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+}
+
+.men-pill-item:hover {
+    background: #e11b23;
+    border-color: #e11b23;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ── Promo Grid (same as before, keeps working) ─────────────────────────── */
+.men-promo-grid-container {
+    padding: 2rem 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.men-promo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 350px);
+    gap: 1.5rem;
+}
+
+.men-promo-large {
+    grid-row: span 2;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.men-promo-small {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.men-promo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    color: #fff;
+}
+
+.men-promo-overlay h2 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin: 0 0 1rem;
+    font-weight: 700;
+}
+
+.men-promo-overlay h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+}
+
+.men-promo-overlay a {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    letter-spacing: 1px;
+}
+
+.men-promo-overlay p {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: #ffeb3b;
+    font-weight: 600;
+}
+
+@media (max-width: 968px) {
+    .men-promo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .men-promo-large {
+        grid-row: span 1;
+        height: 400px;
+    }
+
+    .men-promo-small {
+        height: 300px;
+    }
+}
+
+/* ── Brand Marquee (upgraded) ────────────────────────────────────────────── */
+.men-brand-marquee {
+    padding: 3.5rem 0;
+    background: #080808;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.marquee-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    align-items: center;
+}
+
+.marquee-item {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 3rem;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+    cursor: default;
+    letter-spacing: 0.05em;
+}
+
+.marquee-item:hover {
+    color: #e11b23;
+    -webkit-text-stroke: 1px #e11b23;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ----------------- WOMEN'S PAGE ----------------- */
+
+/* Women Editorial Hero V4 (Indie Store Theme) */
+.women-editorial-hero-v4 {
+    position: relative;
+    padding: 8rem 5% 4rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 85vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+.weh4-text-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+.weh4-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 1.5rem;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.weh4-highlight {
+    color: #e02b2b;
+    /* Indie Store Red */
+}
+
+.weh4-subtitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 400px;
+}
+
+.weh4-btn {
+    padding: 1rem 3rem;
+    background: #111;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.weh4-btn:hover {
+    background: #e02b2b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(224, 43, 43, 0.2);
+}
+
+.weh4-image-container {
+    flex: 1.2;
+    height: 70vh;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.weh4-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+@media (max-width: 968px) {
+    .women-editorial-hero-v4 {
+        flex-direction: column;
+        text-align: center;
+        padding: 6rem 5% 2rem;
+        gap: 2rem;
+    }
+
+    .weh4-text-container {
+        max-width: 100%;
+    }
+
+    .weh4-subtitle {
+        margin: 0 auto 2rem;
+    }
+
+    .weh4-image-container {
+        width: 100%;
+        height: 50vh;
+    }
+}
+
+/* Women Portrait Cards */
+.women-portrait-container {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.women-portrait-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.women-portrait-card {
+    display: block;
+    text-decoration: none;
+    color: #111;
+    text-align: center;
+}
+
+.women-portrait-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.women-portrait-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.women-portrait-card:hover .women-portrait-img img {
+    transform: scale(1.05);
+}
+
+.women-portrait-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Women Lookbook */
+.women-lookbook-container {
+    background: #fafafa;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.women-lookbook-header {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.women-lookbook-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 0 1rem 2rem;
+    scrollbar-width: none;
+}
+
+.women-lookbook-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.women-lookbook-item {
+    min-width: 250px;
+    max-width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.women-lookbook-item img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+}
+
+.women-lookbook-info {
+    padding-top: 1rem;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Women Brand Circles (Slightly more elegant than default) */
+.women-brand-circles {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.women-brand-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.women-brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.women-brand-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.women-brand-img:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.women-brand-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.women-brand-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* ----------------- ACCESSORIES PAGE ----------------- */
+
+/* Accessories Short Hero */
+.asc-short-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 350px;
+    background-size: cover;
+    background-position: center 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.asc-short-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 15, 15, 0.9) 0%, rgba(15, 15, 15, 0.4) 100%);
+}
+
+.asc-short-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.asc-short-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 0 1rem;
+}
+
+.asc-short-hero-subtitle {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Accessories Text List */
+.asc-text-list-container {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.asc-text-list-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #111;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.asc-text-list-item:hover .asc-text-list-hover-img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.asc-text-list-item:hover .asc-text-list-title {
+    color: #888;
+    transform: translateX(20px);
+}
+
+.asc-text-list-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.asc-text-list-count {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.asc-text-list-hover-img {
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .asc-text-list-hover-img {
+        display: none;
+    }
+
+    .asc-text-list-item:hover .asc-text-list-title {
+        transform: none;
+    }
+}
+
+/* Accessories Wide Banners (Refined) */
+.asc-wide-container {
+    padding: 0;
+    background: #fafafa;
+}
+
+.asc-wide-banner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.asc-wide-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.asc-wide-banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.asc-wide-banner-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin: 0 0 1rem;
+}
+
+.asc-wide-banner-action {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.asc-wide-banner-action:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* ----------------- DISCOVER PAGE ----------------- */
+
+/* Discover Triptych Hero */
+.dsc-triptych-container {
+    display: flex;
+    height: 70vh;
+    min-height: 500px;
+    background: #0a0a0a;
+}
+
+.dsc-triptych-panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dsc-triptych-panel:last-child {
+    border-right: none;
+}
+
+.dsc-triptych-panel:hover {
+    flex: 1.5;
+}
+
+.dsc-triptych-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.dsc-triptych-panel:hover .dsc-triptych-overlay {
+    opacity: 1;
+}
+
+.dsc-triptych-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 0.5rem;
+    letter-spacing: 2px;
+}
+
+.dsc-triptych-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.dsc-triptych-panel:hover .dsc-triptych-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .dsc-triptych-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .dsc-triptych-panel {
+        height: 300px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dsc-triptych-panel:hover {
+        flex: 1;
+    }
+
+    .dsc-triptych-desc {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Discover Polaroids */
+.dsc-polaroids-container {
+    padding: 6rem 2rem;
+    background: #fdfdfd;
+    overflow: hidden;
+}
+
+.dsc-polaroids-header {
+    text-align: center;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    color: #111;
+}
+
+.dsc-polaroids-track {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dsc-polaroid {
+    background: #fff;
+    padding: 1rem 1rem 3rem 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease, z-index 0s;
+    position: relative;
+    text-decoration: none;
+    color: #111;
+    z-index: 1;
+}
+
+.dsc-polaroid:nth-child(even) {
+    transform: rotate(4deg) translateY(20px);
+}
+
+.dsc-polaroid:nth-child(3n) {
+    transform: rotate(-2deg) translateY(-10px);
+}
+
+.dsc-polaroid:hover {
+    transform: rotate(0) scale(1.1) translateY(-10px);
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.dsc-polaroid-img {
+    width: 250px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1rem;
+}
+
+.dsc-polaroid-caption {
+    font-family: 'Just Another Hand', cursive, sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0;
+}
+
+/* Discover Magazine */
+.dsc-magazine-container {
+    padding: 2rem 2rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fdfdfd;
+}
+
+.dsc-magazine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.dsc-magazine-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.dsc-magazine-block.reverse {
+    flex-direction: column-reverse;
+}
+
+.dsc-magazine-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1.5rem;
+}
+
+.dsc-magazine-block.reverse .dsc-magazine-img {
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+}
+
+.dsc-magazine-text {
+    padding: 1rem 0;
+}
+
+.dsc-magazine-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.dsc-magazine-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+}
+
+.dsc-magazine-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #111;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    .dsc-magazine-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .dsc-magazine-block.reverse {
+        flex-direction: column;
+    }
+
+    .dsc-magazine-block.reverse .dsc-magazine-img {
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+    }
+}
+
+/* ----------------- KIDS' PAGE ----------------- */
+
+/* Kids Bento Hero */
+.kids-bento-hero {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 1.5rem;
+    background: #fdfdfd;
+}
+
+.kids-bento-main {
+    grid-row: span 2;
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+    color: #fff;
+}
+
+.kids-bento-side-1 {
+    border-radius: 24px;
+    background: #FFD166;
+    /* Sunny Yellow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: #111;
+}
+
+.kids-bento-side-2 {
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    color: #fff;
+}
+
+.kids-bento-hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    margin: 0;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.kids-bento-side-1 h2 {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+}
+
+.kids-bento-side-1 p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 968px) {
+    .kids-bento-hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 250px 250px;
+    }
+}
+
+/* Kids Category Bubbles */
+.kids-bubbles-container {
+    padding: 4rem 1rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.kids-bubbles-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    color: #111;
+    margin-bottom: 3rem;
+}
+
+.kids-bubbles-track {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kids-bubble-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #111;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.kids-bubble-item:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.kids-bubble-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.kids-bubble-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: #111;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+}
+
+/* Kids Deal Grid */
+.kids-deal-container {
+    padding: 5rem 2rem;
+    background: #fdfdfd;
+}
+
+.kids-deal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.kids-deal-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.kids-deal-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #EF476F;
+    /* Vibrant Pink/Red */
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    transform: rotate(-5deg);
+}
+
+.kids-deal-title {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Kids Logo Wall */
+.kids-logo-wall {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.kids-logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.kids-logo-item {
+    width: 150px;
+    height: 80px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.kids-logo-item:hover {
+    transform: translateY(-5px);
+}
+
+.kids-logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.kids-logo-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
